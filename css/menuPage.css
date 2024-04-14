@@ -1,0 +1,316 @@
+/* side menu bar */
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* pre loader */
+
+#pre_loader{
+    background:rgb(255, 255, 255) url(/assets/images/loader2.gif) no-repeat center;
+    background-size: 60%;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+
+    z-index: 1000;
+}
+
+#menu_page_main_div{
+    margin-top: 120px;
+    /* border: 1px solid red; */
+    width: 88vw;
+    height: auto;
+    margin-left: 10%;
+}
+#menu_page_main_div>div{
+    display: flex;
+    justify-content:space-between;
+    /* border: 2px solid green; */
+    position: relative;
+}
+
+#menu_page_main_div a{
+    text-decoration: none;
+    color: black;
+}
+#menu_page_main_div a:hover{
+    text-decoration:underline;
+    
+}
+#side_menu_bar_outer_div{
+    flex: 1;
+    
+}
+
+
+#side_menu_bar>div{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    
+    
+    position: fixed;
+    
+
+}
+#menu_bar_red_lines{
+    width: 25%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: space-between;
+    height: 45px;
+    /* margin: auto; */
+    
+}
+
+#menu_bar_red_lines>span{
+   width: 25%;
+   
+    background-color: #e02525;
+   /* border: 1px solid black; */
+}
+
+/* menu page featured items */
+
+#menu_page_items{
+    /* border: 2px solid blue; */
+    margin-top: 90px;
+    /* margin-left: 20%; */
+    flex: 3;
+}
+
+
+/* featured_items_ */
+
+.heading_feature_card_filter{
+    display: flex;
+    /* border: 1px solid red; */
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.heading_feature_card_filter>h1{
+flex: 3;
+}
+.heading_feature_card_filter>h3{
+   padding: 15px;
+    }
+#filter{
+    flex: 1;
+  background-color: #e02525;
+  border: 0;
+  border-radius: 56px;
+  box-shadow: rgba(226, 113, 82, 0.24) 0 2px 2px,rgba(179, 132, 201, 0.4) 0 8px 12px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: system-ui,-apple-system,system-ui,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  outline: 0;
+  padding: 12px 0px;
+  position: relative;
+  text-shadow: rgba(255, 255, 255, 0.4) 0 0 4px,rgba(255, 255, 255, 0.2) 0 0 12px,rgba(57, 31, 91, 0.6) 1px 1px 4px,rgba(57, 31, 91, 0.32) 4px 4px 16px;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+#filter>option{
+    background-color: rgb(116, 113, 113);
+    color: white;
+    border-radius: 56px;
+    border: 1px solid rgb(255, 252, 252);
+}
+#filter:before {
+  background-color: initial;
+  background-image: linear-gradient(#fff 0, rgba(255, 255, 255, 0) 100%);
+  border-radius: 125px;
+  content: "";
+  height: 50%;
+  left: 4%;
+  opacity: .5;
+  position: absolute;
+  top: 0;
+  transition: all .3s;
+  width: 60%;
+}
+
+#filter:hover {
+  box-shadow: rgba(255, 255, 255, .2) 0 3px 15px inset, rgba(0, 0, 0, .1) 0 3px 5px, rgba(0, 0, 0, .1) 0 10px 13px;
+  transform: scale(1.05);
+}
+
+
+
+.food_cards>h1{
+    font-family: Haettenschweiler, 'Arial Narrow Regular', sans-serif;
+    font-size:3rem;
+    letter-spacing: 3px;
+    font-weight:lighter;
+    
+
+}
+.featured_cards{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+    margin: 70px 0;
+    
+    /* padding: 8% 0; */
+    /* justify-content: center; */
+    /* border: 2px solid palevioletred; */
+
+}
+
+#main_card{
+    cursor: pointer;
+}
+
+#main_card:hover img{
+    transform: scale(0.9);
+}
+.featured_cards>div{
+    display: flex;
+    flex-direction: column;
+    /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    gap: 15px;
+    padding: 20px;
+    border-radius: 30px;
+}
+
+.featured_cards img{
+    width: 250px;
+    background-color: #f8f7f5;
+    transition: 0.5s all ease-in-out;
+
+}
+.featured_cards p{
+    font-size: 14px;
+    font-family: "Helvetica Neue", sans-serif;
+}
+
+/* cart and show icons */
+
+
+#cart_show_div{
+    display: flex;
+    justify-content: left;
+    gap: 30px;
+}
+#cart_show_div i{
+    font-size: 20px;
+    color: rgb(96, 92, 92);
+}
+#cart_show_div i:hover{
+    color: black;
+}
+/* eyes icon */
+
+.showDiv{
+    position: relative;
+    cursor: pointer;
+    padding: 7px;
+    font-size: 10px;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+.showText{
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    background-color: black;
+    color:white;
+    white-space:nowrap;
+    padding: 5px 12px;
+    border-radius: 7px;
+    visibility: hidden;
+    opacity: 0;
+    transition:opacity 0.5s ease;
+}
+.showText::before{
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    border: 5px solid;
+    border-color: #000 #0000 #0000 #0000;
+}
+
+.showDiv:hover .showText{
+   top: -80%;
+   visibility: visible;
+   opacity: 1;
+}
+#cartCount{
+    position: absolute;
+    top:0;
+    right: 0;
+    font-size: 11px;
+    color: #e02525;
+}
+@media screen and (max-width:1200px){
+ 
+
+   
+
+    #menu_page_main_div>div{
+        flex-direction: column;
+    }
+#menu_bar_red_lines{
+    display: none;
+}
+    #side_menu_bar>div{
+        position:relative;
+        flex-direction:initial;
+        overflow: scroll;
+        width: 100vw;
+        /* background-color: #e02525; */
+        box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+        position: fixed;
+        top: 125px;
+        left: 0;
+        align-items: center;
+        font-size: 14px;
+        padding: 25px;
+        background-color: white;
+        gap: 0;
+        /* border: 2px solid red; */
+        z-index: 100;
+    }
+
+    #side_menu_bar>div::-webkit-scrollbar{
+        display: none;
+    }
+    #side_menu_bar h1{
+        display: none;
+    }
+    
+    #side_menu_bar a,h3{
+        /* background-color: pink; */
+       min-width:120px;
+       
+       
+    }
+    .featured_cards{
+        grid-template-columns: repeat(2,1fr);
+    }
+    
+    #filter {
+        padding: 16px 48px;
+      }
+
+}
+

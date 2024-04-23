@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Schedule</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #Weekly-Schedule{
+            text-align: center;
+            width: 100%;
+        }
+        #Weekly-Schedule>h1{
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+            align-items:center;
+            height: 100px;
+        }
+        #button-div1{
+            margin: 65px;
+            margin-top: 5px;
+            display: flex;
+            justify-content: space-around; 
+        }
+        #button-div1 div{  
+           width: 80px;
+           text-align: center;
+           border-radius: 10px;
+           width: 100%;
+        }
+        button{
+            padding-top: 3px;
+            padding-bottom: 3px;
+            border: none;
+            margin: 4px;
+            border-radius: 17px;
+            width: 160px;
+            height: 33px;
+        }
+        .time{
+            font-size: 15px;
+            font-weight:bolder;
+            background-color: #BCEEF2;
+        }
+        .pinck-button{
+            font-size: 15px;
+            background-color: #FFD6EF;
+        }
+        .yellow{
+            font-size: 15px;
+            background-color:#FAECAA;
+        }
+        #day-name{
+            font-weight: bolder;
+        }
+        #hden-btn{
+            background-color: #FFFFFF;
+        }
+        #block-div{
+            width: 100%;
+            text-align: center;
+            margin-top: -45px;
+            margin-bottom: 20px;
+        }
+        #block-div>button{
+            background-color: #BCEEF2 ;
+            width: 88%;
+            height: 40px;
+            margin-top: 0;
+        }
+        #block-div>button>div{
+            font-weight: bolder;
+            margin-left: 15px;
+            text-align: start;
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="Weekly-Schedule">
+        <h1><span>⭐</span>Weekly Schedule<span>⭐</span></h1>
+    </div>
+    <div id="button-div1">
+        <div>
+            <button id="hden-btn"></button>
+            <button class="time">8:00</button>
+            <button class="time">9:00</button>
+            <button class="time">10:00</button>
+            <button class="time">11:00</button>
+            <button class="time">12:00</button>
+            <button class="time">13:00</button>
+            <button class="time">14:00</button>
+            <button class="time">15:00</button>
+            <button class="time">16:00</button>
+        </div>
+        <div>
+            <button id="day-name" class="pinck-button">Monday</button>
+            <button class="pinck-button"></button>
+            <button class="pinck-button"></button>
+            <button class="pinck-button"></button>
+            <button class="pinck-button"></button>
+            <button class="pinck-button"></button>
+            <button class="pinck-button"></button>
+            <button class="pinck-button"></button>
+            <button class="pinck-button"></button>
+            <button class="pinck-button"></button>
+        </div>
+        <div>
+            <button id="day-name" class="yellow">Tuesday</button>
+            <button class="yellow"></button>
+            <button class="yellow"></button>
+            <button class="yellow"></button>
+            <button class="yellow"></button>
+            <button class="yellow"></button>
+            <button class="yellow"></button>
+            <button class="yellow"></button>
+            <button class="yellow"></button>
+            <button class="yellow"></button>
+        </div>
+        <div>
+            <button id="day-name" class="pinck-button">Wednesday</button>
+            <button class="pinck-button"></button>
+            <button class="pinck-button"></button>
+            <button class="pinck-button"></button>
+            <button class="pinck-button"></button>
+            <button class="pinck-button"></button>
+            <button class="pinck-button"></button>
+            <button class="pinck-button"></button>
+            <button class="pinck-button"></button>
+            <button class="pinck-button"></button>
+        </div>
+        <div>
+            <button id="day-name" class="yellow">Thursday</button>
+            <button class="yellow"></button>
+            <button class="yellow"></button>
+            <button class="yellow"></button>
+            <button class="yellow"></button>
+            <button class="yellow"></button>
+            <button class="yellow"></button>
+            <button class="yellow"></button>
+            <button class="yellow"></button>
+            <button class="yellow"></button>
+        </div>
+        <div>
+            <button id="day-name" class="pinck-button">Friday</button>
+            <button class="pinck-button"></button>
+            <button class="pinck-button"></button>
+            <button class="pinck-button"></button>
+            <button class="pinck-button"></button>
+            <button class="pinck-button"></button>
+            <button class="pinck-button"></button>
+            <button class="pinck-button"></button>
+            <button class="pinck-button"></button>
+            <button class="pinck-button"></button>
+        </div>
+        
+    </div>
+    <div id="block-div">
+        <button><div>Note</div></button>
+    </div>
+    
+</body>
+</html>

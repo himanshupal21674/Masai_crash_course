@@ -1,0 +1,73 @@
+
+*{
+    font-family:Georgia, 'Times New Roman', Times, sans-serif;
+    font-weight: bolder;
+}
+#masai{
+    text-align: center;
+    color: rgb(81, 81, 254);
+
+}
+table {
+    font-family:Georgia, 'Times New Roman', Times, sans-serif;
+    border-collapse: collapse;
+    border-radius: 10px;
+    margin: auto;
+    margin-bottom: 50px;
+    margin-right: 20px;
+    text-align: center;
+    background-color: blue;
+    color: white;
+  }
+  #rec {
+   padding: 20px;
+    padding-left: 50px;
+    margin-right: 75%;
+    margin-left: 40px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+   
+  }
+  #sub{
+    background-color: rgb(64, 61, 253);
+    border-radius: 10px;
+    padding: 5px;
+    margin-top: 20px; 
+    width: 150px; 
+  }
+
+  #sub:hover {
+   
+    background-color: #4CAF50; 
+    color: white;
+    cursor: pointer;
+  }
+ 
+  table td,
+  table th {
+    border: 1px solid rgb(252, 250, 250);
+    padding: 8px;
+    text-align: center;
+  }
+  
+/* Media query for tablets */
+@media only screen and (max-width: 768px) {
+   
+    #rec {
+      width: 100%;
+    }
+  }
+  
+  /* Media query for mobile devices */
+  @media only screen and (max-width: 480px) {
+   
+    #rec {
+      width: 100%;
+    }
+  
+    table {
+      width: 100%;
+      overflow-x: auto;
+    }
+  }
+  

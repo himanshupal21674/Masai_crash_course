@@ -1,0 +1,18 @@
+/* styles.css */
+/* Basic styles for the country app */
+.country-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+#countries-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#sort-button, #sort-order {
+    margin: 10px;
+}

@@ -1,0 +1,13 @@
+ /* Basic styles for the Todo App */
+ .todo-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 3px;
+}
+
+#todos-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

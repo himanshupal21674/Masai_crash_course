@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Slider</title>
+  <style>
+    h1{
+        text-align: center;
+    }
+   body {
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+}
+
+#slider-container {
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+}
+
+.slider-img {
+  display: none;
+  width: 100%;
+  height: 80vh; 
+  object-fit: cover; 
+  border-radius: 20px;
+}
+
+#controls {
+  text-align: center;
+  margin-top: 10px;
+}
+
+button {
+  padding: 15px 30px;
+  margin: 10px;
+  cursor: pointer;
+  background-color: #4285f4;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #17f603; 
+}
+
+  </style>
+</head>
+<body>
+    <h1>SlideShow JS</h1>
+
+<div id="slider-container">
+  <img class="slider-img" src="https://qph.cf2.quoracdn.net/main-qimg-6d8c0944241251f862cf046c0cb4659d-pjlq" alt="Image 1">
+  <img class="slider-img" src="https://cdn.pixabay.com/photo/2023/02/09/14/01/universe-7778892_1280.jpg" alt="Image 2">
+  <img class="slider-img" src="https://scitechdaily.com/images/Billions-of-Earth-Like-Planets.jpg" alt="Image 3">
+  <img class="slider-img" src="https://images.theconversation.com/files/511620/original/file-20230222-16-c8nmnb.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip" alt="Image 4">
+  <img class="slider-img" src="https://people.com/thmb/PO4QEtvzGqlwnSOaIsg1QTjbfTE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(419x469:421x471)/PArade-of-Planets-2022-01-122922-5e21b531f28a4fd680493e0f303e2f24.jpg" alt="Image 5">
+  <img class="slider-img" src="https://astronimate.com/wp-content/uploads/featured_milky_way.jpg" alt="Image 6">
+</div>
+
+<div id="controls">
+  <button onclick="toggleSlider()">Start/Stop</button>
+  <button onclick="prevSlide()">Previous</button>
+  <button onclick="nextSlide()">Next</button>
+</div>
+
+</body>
+<script>
+  let currentSlide = 0;
+  let isAutoPlay = true;
+  let slideInterval;
+
+  function showSlide(index) {
+    const slides = document.getElementsByClassName('slider-img');
+
+    // Hide all slides
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = 'none';
+    }
+
+    // Show the current slide
+    slides[index].style.display = 'block';
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % document.getElementsByClassName('slider-img').length;
+    showSlide(currentSlide);
+  }
+
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + document.getElementsByClassName('slider-img').length) % document.getElementsByClassName('slider-img').length;
+    showSlide(currentSlide);
+  }
+
+  function toggleSlider() {
+    if (isAutoPlay) {
+      clearInterval(slideInterval);
+    } else {
+      slideInterval = setInterval(nextSlide, 2000); // Change slide every 2 seconds
+    }
+    isAutoPlay = !isAutoPlay;
+  }
+
+  // Initial setup
+  showSlide(currentSlide);
+  slideInterval = setInterval(nextSlide, 2000); // Start auto-play
+</script>
+</html>

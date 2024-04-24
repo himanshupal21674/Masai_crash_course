@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stopwatch</title>
+  <style>
+    h1{
+        font-family: ROG Font sans-serif;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    
+    h1 {
+      font-size: 32px;
+      margin-top: 20px;
+    }
+
+    #time {
+      font-size: 60px;
+      margin: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    button {
+      background-color: rgb(63, 116, 251);
+      color: white;
+      font-size: 24px;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      margin: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: rgb(63, 116, 251);
+    }
+  </style>
+</head>
+<body>
+  <h1>Stopwatch</h1>
+  <div id="time">00:00:00</div>
+  <button onclick="startStopwatch()">Start</button>
+  <button onclick="pauseStopwatch()">Pause</button>
+  <button onclick="resetStopwatch()">Reset</button>
+</body>
+</html>
+<script>
+    let timer;
+    let startTime;
+    let isRunning = false;
+
+    function formatTime(timeInSeconds) {
+      let hours = Math.floor(timeInSeconds / 3600);
+      let minutes = Math.floor((timeInSeconds % 3600) / 60);
+      let seconds = timeInSeconds % 60;
+
+      let formattedHours = hours > 0 ? String(hours).padStart(2, '0') + ':' : '';
+      let formattedMinutes = (hours > 0 || minutes > 0) ? String(minutes).padStart(2, '0') + ':' : '';
+      let formattedSeconds = String(seconds).padStart(2, '0');
+
+      return formattedHours + formattedMinutes + formattedSeconds;
+    }
+
+    function updateDisplay() {
+      let currentTime = Math.floor((Date.now() - startTime) / 1000);
+      document.getElementById('time').innerText = formatTime(currentTime);
+    }
+
+    function startStopwatch() {
+      if (!isRunning) {
+        isRunning = true;
+        startTime = Date.now();
+        timer = setInterval(updateDisplay, 1000);
+      }
+    }
+
+    function pauseStopwatch() {
+      if (isRunning) {
+        isRunning = false;
+        clearInterval(timer);
+      }
+    }
+
+    function resetStopwatch() {
+      isRunning = false;
+      clearInterval(timer);
+      document.getElementById('time').innerText = '00:00:00';
+    }
+  </script>

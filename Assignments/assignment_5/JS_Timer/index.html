@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timer</title>
+ <style>
+    h1 {
+  text-align: center;
+  font-size: 48px;
+  margin-top: 20px;
+}
+
+body {
+  background-color: #f0f0f0;
+}
+
+#timer-container {
+  text-align: center;
+  margin-top: 50px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+#timer {
+  font-size: 60px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  margin-bottom: 20px;
+}
+
+input {
+  width: 50px;
+  text-align: center;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+  background-color: #4285f4;
+  color: #fff;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #11ff39;
+}
+  </style>
+</head>
+<body>
+<h1>JS Timer</h1>
+<div id="timer-container">
+  <div id="timer">00:00:00</div>
+  <div>
+    <input type="number" id="hours" placeholder="H" min="0">
+    <input type="number" id="minutes" placeholder="M" min="0" max="59">
+    <input type="number" id="seconds" placeholder="S" min="0" max="59">
+  </div>
+  <button onclick="startTimer()">Start</button>
+  <button onclick="pauseTimer()">Pause</button>
+  <button onclick="resetTimer()">Reset</button>
+</div>
+</body>
+</html>
+<script>
+let timerInterval;
+let totalSeconds = 0;
+
+function updateTimerDisplay() {
+  let hours = Math.floor(totalSeconds / 3600);
+  let minutes = Math.floor((totalSeconds % 3600) / 60);
+  let seconds = totalSeconds % 60;
+
+  document.getElementById('timer').innerText = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+}
+
+function startTimer() {
+  let hours = parseInt(document.getElementById('hours').value) || 0;
+  let minutes = parseInt(document.getElementById('minutes').value) || 0;
+  let seconds = parseInt(document.getElementById('seconds').value) || 0;
+
+  totalSeconds = hours * 3600 + minutes * 60 + seconds;
+
+  if (totalSeconds > 0 && !timerInterval) {
+    timerInterval = setInterval(function () {
+      if (totalSeconds > 0) {
+        totalSeconds--;
+        updateTimerDisplay();
+      } else {
+        clearInterval(timerInterval);
+        timerInterval = null;
+      }
+    }, 1000);
+  }
+}
+
+function pauseTimer() {
+  clearInterval(timerInterval);
+  timerInterval = null;
+}
+
+function resetTimer() {
+  clearInterval(timerInterval);
+  timerInterval = null;
+  totalSeconds = 0;
+  updateTimerDisplay();
+}
+</script>
